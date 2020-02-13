@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "807755525390",
+    "firebase_url": "https://messagerapp-37cb6.firebaseio.com",
+    "project_id": "messagerapp-37cb6",
+    "storage_bucket": "messagerapp-37cb6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:807755525390:android:f402de9f959903200d3b5f",
+        "android_client_info": {
+          "package_name": "com.factor.messager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "807755525390-6rq3nfl2o3emt2d0kp3se8aurh11u988.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxHuteaKbx0zRmQBY_wOL5_IkZWUcsBX4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "807755525390-6rq3nfl2o3emt2d0kp3se8aurh11u988.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
