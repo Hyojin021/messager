@@ -55,7 +55,8 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     path: 'setting',
     loadChildren: () => import('../pages/setting/setting.module').then((m) => m.SettingModule)
-  }
+  },
+  { path: 'translator', loadChildren: './translator/translator.module#TranslatorPageModule' }
 ];
 
 @NgModule({
