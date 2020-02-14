@@ -83,19 +83,34 @@ export class MessagesService extends Extender {
    * if no message exists, create one,
    * if message exists, navigate to chat modal
    */
-  public startChat(user: IUser) {
-    this.firestoreService
-      .colWithIds$<IMessage>('messages', (ref: any) => ref.where('participantsId', 'array-contains', user.uid))
-      .subscribe((data) => {
-        const message = data[0];
-        if (!message) {
-          this.createMessage(user);
-        } else {
-          this.goto(`${this.routes.messages}/${message.id}`);
-        }
-      });
-  }
-
+  public async startChat(user: IUser) {
+		let myaccount = await this.authService.getUser();
+		this.firestoreService
+			.colWithIds$<IMessage>('messages', (ref: any) =>
+				ref.where('participantsId', 'array-contains', user.uid)
+			)
+			.pipe(
+				map((data: IMessage[]) => {
+					let temp: IMessage[] = [];
+					data.forEach((element) => {
+						element.participantsId.forEach((part) => {
+							if (part == myaccount.uid) {
+								temp.push(element);
+							}
+						});
+					});
+					return temp;
+				})
+			)
+			.subscribe((data) => {
+				const message = data[0];
+				if (!!message) {
+					this.goto(`${this.routes.messages}/${message.id}`);
+				} else {
+					this.createMessage(user);
+				}
+			});
+	}
   /** delete a message in chat */
   public deleteChat(message: IMessage, data: IChat) {
     return this.firestoreService.update(`messages/${message.id}`, {

@@ -12,6 +12,7 @@ import { CommonService } from 'src/shared/services/common/common.service';
 import { FirestoreService } from 'src/shared/services/firestore/firestore.service';
 import { CHAT_TYPES, IChat, IMessage } from '../../models/message';
 import { MessagesService } from '../../services/messages/messages.service';
+import { setCORS } from "google-translate-api-browser";
 
 /**
  * send messages between users. as a user, you can deactivate autoreply in setting page.
@@ -67,8 +68,23 @@ export class MessageComponent extends Extender implements OnInit, AfterContentCh
           this.toast(err);
         }
       )
-    );
-  }
+    )
+    const translate = setCORS("http://cors-anywhere.herokuapp.com/");
+/*
+// or
+import translate, { setCORS } from "google-translate-api-browser";
+setCORS("http://cors-anywhere.herokuapp.com/");
+*/
+translate('안녕하세요', { to: "en" })
+  .then(res => {
+    // I do not eat six days
+    console.log(res.text)
+  })
+  .catch(err => {
+    console.error(err);
+  });
+}
+  
 
   /** scroll to bottom when view loads with messages */
   public ngAfterContentChecked() {
