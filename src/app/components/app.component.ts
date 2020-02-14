@@ -21,8 +21,8 @@ import { AppService, IAppPages } from '../services/app/app.service';
 })
 export class AppComponent extends Extender implements OnInit {
   public pages = [];
-  public color: string = '#009688';
-
+  // public color: string = '#009688';
+  public color: string = '#3232FF';
   constructor(
     protected injector: Injector,
     private appService: AppService,

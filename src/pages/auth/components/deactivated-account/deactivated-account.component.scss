@@ -1,9 +1,12 @@
 :host {
+ 
   .content-wrapper {
+    background-image: url('../../../../assets/images/new/Background1.jpg');
+    background-size: cover no-repeat fixed;
     .wrapper {
       display: flex;
       height: 100%;
-
+      
       .content-scroll {
         height: calc(100% - 90px) !important;
         width: 100%;

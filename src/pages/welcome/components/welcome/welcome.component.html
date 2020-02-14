@@ -1,4 +1,5 @@
 <ion-content scrollX="false" scrollY="false" class="ion-padding">
+  <!-- <img src="../../../../images/new/Background1.jpg" id="bg" alt=""> -->
   <div class="content-wrapper">
     <!-- start language selection-->
     <div class="language" *ngIf="language">
@@ -16,10 +17,10 @@
       <ion-slides (ionSlideDidChange)="slideChanged()">
         <ion-slide *ngFor="let item of slides">
           <div class="slide-wrapper">
-            <div class="image" [image-loader]="item.image"></div>
+            <div class="image"></div>
             <div class="detail">
-              <div class="title">{{ item.title | translate }}</div>
-              <div class="paragraph">{{ item.paragraph | translate }}</div>
+              <div class="title">SinEo</div>
+              <div class="paragraph">{{ item.paragraph | translate }}</div> 
             </div>
           </div>
         </ion-slide>
@@ -33,11 +34,13 @@
         {{ 'welcome-component.get-started' | translate }}</ion-button
       >
       <div class="swiper-bullets">
+        
         <span
           class="bullet"
           *ngFor="let item of slides; let i = index"
           [ngClass]="{ active: i === currentIndex }"
         ></span>
+        
       </div>
     </div>
     <!-- end navigation -->

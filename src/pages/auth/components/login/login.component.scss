@@ -1,7 +1,10 @@
 :host {
+  // --background: url('../../../../assets/images/new/Background1.jpg');
+ 
   ion-content {
-    --background: var(--ion-color-light);
-
+    // --background: var(--ion-color-contrast);
+    
+  
     .content-wrapper {
       display: flex;
       flex-direction: column;
@@ -10,6 +13,7 @@
       background-size: contain;
       background-repeat: no-repeat;
       background-position: 0 -40px;
+     
 
       &.center {
         justify-content: center;
@@ -59,4 +63,14 @@
       }
     }
   }
+}
+
+#bg {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+	
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
 }

@@ -1,13 +1,16 @@
 ion-menu {
   --width: 100px;
+  // color: red;//
   ion-list {
     padding: 0 !important;
+    // color: red !important;//
   }
 }
 
 .menu {
   text-align: center;
   height: 100%;
+  // color: red;//
 
   .item {
     display: flex;
@@ -15,6 +18,7 @@ ion-menu {
     width: 100%;
     align-items: center;
     justify-content: center;
+    // color: blue;//
 
     ion-icon {
       display: table-cell;
